@@ -140,3 +140,36 @@ a.nav-link {
     width: 100%;
     height: 100%;
   }
+
+ /*end banner*/
+
+.Action img {
+	width: 100%;
+	height: 100%;
+}
+
+/*end  action*/
+
+.displayproduct .right {
+	display: flex;
+}
+
+.displayproduct .left {
+	display: flex;
+}
+
+.displayproduct .right p {
+ padding-left: 20px;
+}
+
+/*end displayproduct*/
+.onsaleinfo {
+	display: flex;
+}
+.onsaleinfo .productsale .timesale {
+	display: flex;
+}
+
+.onsaleinfo .productsale .itemsale {
+	display: flex;
+}
