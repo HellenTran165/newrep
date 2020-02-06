@@ -18,40 +18,20 @@ body,html {
 	background: black;
 }
 
-.home .topmenu .logo {
-	font-family: 'Roboto Slab', serif;
-	font-size: 13px;
-	padding: 7px 30px;
-	font-weight: bold;
+.home .menu .left {
+	color: white;
+	padding-top: 15px;
+	padding-left: 6%;
 }
 
-.home .mntrenphai {
-    padding-top: 0px;
-    font-size: 13px;
-    font-weight: 700;
-    color:  rgb(255, 255, 255);
-    font-family: 'Roboto Slab', serif;
-    text-transform: uppercase;
-} 
-
-.navbar-dark .navbar-nav.mntrenphai .nav-link {
-	color: rgb(255, 255, 255);
-	transition: 0.3s;
+.home .menu .right {
+	padding-top: 15px;
 }
 
-.home .mntrenphai li a {
-	padding-left: 15px;
-	padding-right: 15px;
-}
-
-
-.home .mntrenphai li a.btn-outline-secondary.btmenu {
-	padding: 10px 15px;
-	margin-top: -3px;
-	font-size: 13px;
-	font-weight: bold;
-	border: 1px solid white;
-	transition: 0.4s;
+.home .menu .right a {
+	color: white;
+	font-size: 11px;
+	padding-right: 10px;
 }
 
 /*end menu*/
@@ -76,7 +56,7 @@ body,html {
 .home .secondMenu .search {
 	display: flex;
 	padding-top: 10px;
-	padding-left: 15%;
+	/*padding-left: 15%;*/
 	font-size: 30px;
 }
 
@@ -95,12 +75,12 @@ i.fa.fa-search {
 
 .secondMenu .contact .text {
 	font-weight: bold;
-	font-size: 15px;
+	font-size: 10px;
 	color: black;
 }
 
 .secondMenu .contact .number {
-	font-size: 25px;
+	font-size: 20px;
 	font-weight:bold;
 	color: black;
 }
@@ -114,24 +94,15 @@ input#search {
 
 /*end secondMenu*/
 
-.bannerMenu {
-    margin-left: 2%;
-}
 
 
-.bannerMenu li.nav-item {
-    padding-left: 37px;
-}
-
-ul.navbar-nav {
-    list-style: none;
-    color: black !important;
-}
-
-
-a.nav-link {
+.bannermenu a._1select {
     color: black;
     font-weight: bold;
+}
+
+.bannermenu .navigator {
+	padding-left: 10%;
 }
 
 /*end bannerMenu*/
@@ -150,26 +121,79 @@ a.nav-link {
 
 /*end  action*/
 
-.displayproduct .right {
+.displayproduct .menu {
+	background-color: black;
+	color: white;
+}
+.displayproduct .menu .right {
 	display: flex;
+	padding-left: 25%;
+	padding-top: 10px;
 }
 
-.displayproduct .left {
-	display: flex;
+.displayproduct .menu .right p.clicked {
+ 	background-color: white;
+ 	color: black;
 }
 
-.displayproduct .right p {
+.displayproduct .menu .right p {
  padding-left: 20px;
+}
+
+.displayproduct .menu .left {
+	display: flex;
+}
+
+.displayproduct .menu .left p {
+	padding-left: 10%;
+}
+
+.displayproduct .item .bottom {
+	padding-left: 27%;
+}
+
+.displayproduct .item .bottom .button {
+	background-color: #ff5b8f;
 }
 
 /*end displayproduct*/
 .onsaleinfo {
 	display: flex;
+	padding-top: 50px;
 }
 .onsaleinfo .productsale .timesale {
 	display: flex;
 }
 
+.onsaleinfo .productsale .timesale .display-time {
+	width: 40px;
+	height: 40px;
+	background-color: #ff5b8f;
+	color: white;
+	padding-right: 10px;
+}
+
 .onsaleinfo .productsale .itemsale {
 	display: flex;
+}
+
+.onsaleinfo .productsale .itemsale ._1item .bottom {
+	padding-left: 50%;
+}
+
+.onsaleinfo .productsale .category {
+	padding-top: 50px;
+}
+
+.onsaleinfo .productsale .category p.under{
+	width: 100px;
+	height: 10px;
+	background-color: #ff5b8f;
+	margin-left: 37%;
+}
+
+.onsaleinfo .productsale .category .text{
+	padding-left: 25%;
+	font-size: 30px;
+	font-weight: bold;
 }
