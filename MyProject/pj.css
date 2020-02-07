@@ -8,52 +8,66 @@ body,html {
 }
 
 .home {
-	width: 90%;
+	width: 100%;
 	height: 100%;
 	background-color: white;
 	font-family: segoe ui;
+	padding : 0px;
 }
 
 .home .menu {
 	background: black;
 }
 
+.home .menu .logo {
+	padding-left: 6%;
+}
+
 .home .menu .left {
 	color: white;
 	padding-top: 15px;
-	padding-left: 6%;
+	text-align: center;
+	padding-left: 4%;
 }
 
 .home .menu .right {
 	padding-top: 15px;
+	text-align: center;
+}
+
+.home .menu .right .mn-right {
+	padding-right: 15%;
 }
 
 .home .menu .right a {
 	color: white;
-	font-size: 11px;
-	padding-right: 10px;
+	font-size: 9px;
+	padding-right: 5px;
 }
 
 /*end menu*/
-.col-sm-12.adv {
-	width: 95%;
+.adv {
+	padding : 0px;
 	height: 50px;
-	margin-left: 2.5%;
+	
 }
 
 .adv img {
 	width: 100%;
-	height: 100%;
 }
 
 /*end adv*/
 
-.home .secondMenu {
-	width: 95%;
+.home .second-menu {
 	padding-top: 30px;
+	padding-bottom: 50px;
 }
 
-.home .secondMenu .search {
+.home .second-menu img{
+	width: 100%;
+}
+
+.home .second-menu .search {
 	display: flex;
 	padding-top: 10px;
 	/*padding-left: 15%;*/
@@ -61,7 +75,7 @@ body,html {
 }
 
 
-.secondMenu .iconSearch {
+.second-menu .iconSearch {
     background: black;
     width: 70px;
 } 
@@ -73,13 +87,17 @@ i.fa.fa-search {
     font-size: 30px;
 }
 
-.secondMenu .contact .text {
+.second-menu .contact .text {
 	font-weight: bold;
 	font-size: 10px;
 	color: black;
 }
+ 
+.second-menu .contact {
+	text-align: right;
+}
 
-.secondMenu .contact .number {
+.second-menu .contact .number {
 	font-size: 20px;
 	font-weight:bold;
 	color: black;
@@ -95,26 +113,28 @@ input#search {
 /*end secondMenu*/
 
 
-
+.bannermenu {
+	padding-bottom: 20px;
+}
 .bannermenu a._1select {
     color: black;
     font-weight: bold;
 }
 
 .bannermenu .navigator {
-	padding-left: 10%;
+	text-align: center;
 }
 
 /*end bannerMenu*/
 
-.carousel-inner img {
+.banner img {
     width: 100%;
     height: 100%;
   }
 
  /*end banner*/
 
-.Action img {
+.action img {
 	width: 100%;
 	height: 100%;
 }
@@ -127,7 +147,7 @@ input#search {
 }
 .displayproduct .menu .right {
 	display: flex;
-	padding-left: 25%;
+	text-align: right;
 	padding-top: 10px;
 }
 
@@ -137,7 +157,7 @@ input#search {
 }
 
 .displayproduct .menu .right p {
- padding-left: 20px;
+	padding-left: 20px;
 }
 
 .displayproduct .menu .left {
@@ -145,11 +165,14 @@ input#search {
 }
 
 .displayproduct .menu .left p {
-	padding-left: 10%;
+	padding-left: 5%;
 }
 
+.displayproduct .item img {
+	width: 100%;
+}
 .displayproduct .item .bottom {
-	padding-left: 27%;
+	padding-left: 30%;
 }
 
 .displayproduct .item .bottom .button {
@@ -157,12 +180,23 @@ input#search {
 }
 
 /*end displayproduct*/
+.saleinfo .col-md-4._1info{
+	padding: unset;
+}
+.saleinfo img {
+	width: 100%;
+}
 .onsaleinfo {
 	display: flex;
-	padding-top: 50px;
+	padding: unset;
+	margin-top: 50px;
 }
 .onsaleinfo .productsale .timesale {
 	display: flex;
+}
+
+.onsaleinfo .productsale .timesale .time b {
+	padding: 10px 10px;
 }
 
 .onsaleinfo .productsale .timesale .display-time {
@@ -171,6 +205,8 @@ input#search {
 	background-color: #ff5b8f;
 	color: white;
 	padding-right: 10px;
+	font-size: 20px;
+	text-align: center;
 }
 
 .onsaleinfo .productsale .itemsale {
@@ -178,7 +214,11 @@ input#search {
 }
 
 .onsaleinfo .productsale .itemsale ._1item .bottom {
-	padding-left: 50%;
+	padding-left: 30%;
+}
+
+.onsaleinfo .productsale .itemsale ._1item img {
+	width: 100%;
 }
 
 .onsaleinfo .productsale .category {
@@ -196,4 +236,121 @@ input#search {
 	padding-left: 25%;
 	font-size: 30px;
 	font-weight: bold;
+}
+
+.onsaleinfo .productsale .category ._1item img{
+	width: 100%;
+
+}
+
+.onsaleinfo .productsale .category ._1item h3{
+	padding-top: 10px;
+	font-size: 20px;
+	text-align: center;
+	font-weight: bold;
+}
+
+/*end onsaleinfo*/
+
+.store-instore .top {
+	padding-top: 50px;
+}
+
+.store-instore .top .text{
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.store-instore .top  p.under{
+	width: 100px;
+	height: 10px;
+	background-color: #ff5b8f;
+	margin-left: 50%;
+	transform: translateX(-50%);
+}
+
+/*end storeinstore*/
+
+.w-customersaying .top {
+	padding-top: 50px;
+}
+
+.w-customersaying .top .text{
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.w-customersaying .top  p.under{
+	width: 100px;
+	height: 10px;
+	background-color: #ff5b8f;
+	margin-left: 50%;
+	transform: translateX(-50%);
+}
+
+.w-customersaying .item img {
+	width: 100%;
+}
+
+.w-customersaying .item p {
+	font-weight: bold;
+	padding-top: 20px;
+}
+
+/*end w-customersaying*/
+
+.featured-brands {
+	padding-top: 50px;
+}
+
+.featured-brands .left .under {
+	width: 50px;
+	height: 10px;
+	background-color: #ff5b8f;
+}
+
+
+.featured-brands .right img {
+	width: 100%;
+}
+
+/*end featured-brands*/
+
+.footer {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.footer .content-left .content .top {
+	font-weight: bold;
+	padding-bottom: 20px;
+}
+
+.footer .content-right .top {
+	font-weight: bold;
+	padding-bottom: 20px;
+}
+
+.footer .content-right .search {
+	padding-top: 20px;
+	display: flex;
+	width: 100%;
+}
+
+.footer .content-right .search input{
+	padding: 20px 20px;
+
+}
+
+.footer .content-right .bottom {
+	padding-top: 20px;
+	display: flex;
+}
+
+.footer .content-right .search .icon-search {
+	padding: 20px 20px;
+	background-color: black;
+	color: white;
 }
