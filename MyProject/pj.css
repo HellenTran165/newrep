@@ -32,28 +32,6 @@ body,html {
 	
 }
 
-/*.home .menu .right {
-	text-align: center;
-}
-
-.home .menu .right .mn-right {
-	display: flex;
-	font-size: 12px;
-	list-style: none;
-	color: white;
-	padding-top: 15px;
-	padding-left: 4%;
-	text-align: center;
-}
-
-.home .menu .right .mn-right ._1select {
-	display: flex;
-	padding-left: 4%;
-}
-
-.home .menu .right .mn-right ._1select .icon{
-	padding-right: 5px;
-}*/
 
 .home .menu .right {
 	margin-top: 15px;
@@ -453,4 +431,144 @@ input#search {
 
 .footer .content-right .bottom .payment {
 	padding-left: 44%;
+}
+
+
+/*mobile version*/
+
+.display {
+	visibility: visible;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+
+
+/*css for mobile version*/
+#mobile-version {
+	padding-top: 10px;
+	padding-bottom: 20px;
+	align-items: center;
+}
+
+#mobile-version .left {
+	display: flex;
+}
+
+#mobile-version .left .dd-menu {
+	padding-right: 20%;
+}
+
+#mobile-version .middle {
+	text-align: center;
+}
+
+#mobile-version .middle img{
+	width: 50%;
+}
+
+#mobile-version .right{
+	text-align: right;
+}
+
+/*end mobile-version*/
+#second-menu-mb {
+	padding-bottom: 20px;
+}
+
+#second-menu-mb input#search {
+	width: 85%;
+}
+
+#second-menu-mb .iconSearch {
+	width: 15%;
+	background-color: black;
+}
+
+#second-menu-mb .iconSearch .fa-search{
+	padding-bottom: 10px;
+	font-size: 20px;
+}
+
+/*end second-menu-mb*/
+#action-mb {
+	padding-top: 20px;
+}
+
+#action-mb ul{
+	list-style: none;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+}
+
+#action-mb ul li{
+	border-bottom: 1px solid #E0E0E0;
+}
+
+#action-mb ul li p{
+	padding-top: 15px;
+}
+
+
+/*end action-mb*/
+
+#wbfu-mb {
+	padding-top: 20px;
+}
+
+#wbfu-mb  .top .text {
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+
+#wbfu-mb .top  p.under{
+	width: 100px;
+	height: 10px;
+	background-color: #ff5b8f;
+	margin-left: 50%;
+	transform: translateX(-50%);
+}
+
+#wbfu-mb  .bottom {
+	padding-top: 20px;
+}
+
+
+/*end wbfu-mb*/
+#pc-mb {
+	padding-top: 20px;
+}
+
+#pc-mb .top {
+	padding-bottom: 20px;
+}
+
+#pc-mb  .top .text {
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+
+#pc-mb .top  p.under{
+	width: 100px;
+	height: 10px;
+	background-color: #ff5b8f;
+	margin-left: 50%;
+	transform: translateX(-50%);
+}
+
+#pc-mb ._1item img{
+	width: 100%;
+}
+
+#pc-mb ._1item h3 {
+	font-size: 20px;
+	text-align: center;
+	padding: 10px 10px;
 }
