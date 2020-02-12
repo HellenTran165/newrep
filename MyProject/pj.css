@@ -236,6 +236,7 @@ input#search {
 }
 .onsaleinfo .productsale .timesale {
 	display: flex;
+	justify-content: center;
 }
 
 .onsaleinfo .productsale .timesale .time b {
@@ -538,6 +539,38 @@ input#search {
 	padding-top: 20px;
 }
 
+#wbfu-mb .col-xs-6 {
+	text-align: center;
+}
+
+#wbfu-mb .col-xs-6 .content{
+	background-color: #F1EFEF;
+	font-size: 14px;
+}
+
+#wbfu-mb .col-xs-6 .content img{
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+#wbfu-mb .col-xs-6 .content .title{
+	font-weight: bold;
+}
+
+#wbfu-mb .col-xs-6 .content button.left{
+	background-color: white;
+	color: black;
+	font-weight: bold;
+	width: 100px;
+}
+
+#wbfu-mb .col-xs-6 .content button.right{
+	background-color: black;
+	color: white;
+	font-weight: bold;
+	width: 100px;
+}
+
 
 /*end wbfu-mb*/
 #pc-mb {
@@ -568,7 +601,115 @@ input#search {
 }
 
 #pc-mb ._1item h3 {
-	font-size: 20px;
+	font-size: 15px;
 	text-align: center;
+	padding: 10px 10px;
+}
+
+/*end pc-mb*/
+
+#customer-mb .row {
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+
+#customer-mb .top{
+	display: flex;
+	padding-bottom: 20px;
+	padding: unset;
+}
+
+#customer-mb h3 {
+	font-weight: bold;
+	font-size: 30px;
+}
+
+#customer-mb .top .icon {
+	font-size: 20px;
+	text-align: right;
+}
+
+#customer-mb .bottom {
+	font-size: 14px;
+}
+
+/*end customer-mb*/
+
+#select-mb {
+	font-size: 20px;
+	font-weight: bold;
+	padding-bottom: 20px;
+}
+
+#select-mb .row{
+	border-bottom: 1px solid #E0E0E0;
+}
+
+#select-mb .row .text{
+	padding-bottom: 10px;
+}
+
+#select-mb .row .icon {
+	text-align: right;
+}
+
+#select-mb .row .payment img {
+	width: 100%;
+}
+
+/*end select-mb*/
+
+#signup-mb  .top .text {
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+
+#signup-mb .top  p.under{
+	width: 100px;
+	height: 10px;
+	background-color: #ff5b8f;
+	margin-left: 50%;
+	transform: translateX(-50%);
+}
+
+#signup-mb .icon-search {
+	color: white;
+	background-color: black;
+}
+
+#signup-mb .text {
+	justify-content: center;
+}
+
+#signup-mb .search {
+	justify-content:  center;
+}
+
+#signup-mb .search  input#search{
+	height: 50px;
+}
+
+#signup-mb .search  .icon-search p{
+ 	padding-top: 12px;
+ 	font-size: 15px;
+}
+
+/*end signup-mb*/
+
+#footer-mb {
+	padding-top: 20px;
+}
+
+#footer-mb .text {
+	justify-content: center;
+}
+
+#footer-mb .icon {
+	justify-content: center;
+}
+
+#footer-mb .icon i{
 	padding: 10px 10px;
 }

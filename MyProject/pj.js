@@ -1,3 +1,4 @@
+// detect mobile
 var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 		// element desktop verison
 		var element_dt = document.getElementById("desktop-version");
@@ -12,14 +13,17 @@ var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 		var element_sis_dt = document.getElementById("sis-dt");
 		var element_ws_dt = document.getElementById("ws-dt");
 		var element_fb_dt = document.getElementById("fb-dt");
-		
+		var element_footer_dt = document.getElementById("footer-dt");
 		// element mobile version
 		var element_action_mb = document.getElementById("action-mb");
 		var element_sm_mb = document.getElementById("second-menu-mb");
 		var element_mb = document.getElementById("mobile-version");
 		var element_wbfu_mb = document.getElementById("wbfu-mb");
 		var element_pc_mb = document.getElementById("pc-mb");
-
+		var element_customer_mb = document.getElementById("customer-mb");
+		var element_select_mb = document.getElementById("select-mb");
+		var element_signup_mb = document.getElementById("signup-mb");
+		var element_footer_mb = document.getElementById("footer-mb");
 		if (isMobile) {
 			// remove element desktop when display mobile screen
   			element_p.removeChild(element_dt);
@@ -33,6 +37,7 @@ var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 			element_p.removeChild(element_sis_dt);
 			element_p.removeChild(element_ws_dt);
 			element_p.removeChild(element_fb_dt);
+			element_p.removeChild(element_footer_dt);
 
 
 		} 
@@ -45,5 +50,9 @@ var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 			element_p.removeChild(element_action_mb);
 			element_p.removeChild(element_wbfu_mb);
 			element_p.removeChild(element_pc_mb);
+			element_p.removeChild(element_customer_mb);
+			element_p.removeChild(element_select_mb);
+			element_p.removeChild(element_signup_mb);
+			element_p.removeChild(element_footer_mb);
 			
 		}  
