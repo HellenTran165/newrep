@@ -304,6 +304,13 @@ input#search {
 	font-weight: bold;
 }
 
+@media (max-width: 768px){
+	.onsaleinfo .adv {
+		display: none;
+	}
+}
+
+
 /*end onsaleinfo*/
 
 .store-instore {

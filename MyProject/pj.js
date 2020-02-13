@@ -1,6 +1,6 @@
 // detect mobile
 var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-		// element desktop verison
+		// element desktop version
 		var element_dt = document.getElementById("desktop-version");
 		var element_p = document.getElementById("page");
 		var element_adv_dt = document.getElementById("adv-dt");
@@ -56,3 +56,33 @@ var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 			element_p.removeChild(element_footer_mb);
 			
 		}  
+
+
+// creat countdownt timer
+
+var countdowntTime = new Date("Feb 15 , 2020 00:00:00").getTime();
+
+var x = setInterval(function(){
+	var timeNow = new Date();
+	var distance = countdowntTime - timeNow;
+
+
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("hour").innerHTML = hours;
+    document.getElementById("minute").innerHTML = minutes;
+    document.getElementById("second").innerHTML = seconds;
+    
+   	if(distance < 0 ){
+   		clearInterval(x);
+   		document.getElementById("timesale").innerHTML = "END SALE";
+   	}
+
+}, 1000);
+
+//creat suggestion search box
+ 
+
+
