@@ -60,7 +60,7 @@ var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 // creat countdownt timer
 
-var countdowntTime = new Date("Feb 15 , 2020 00:00:00").getTime();
+var countdowntTime = new Date("Feb 14 , 2020 23:59:00").getTime();
 
 var x = setInterval(function(){
 	var timeNow = new Date();
@@ -84,5 +84,46 @@ var x = setInterval(function(){
 
 //creat suggestion search box
  
+// $(function(){
+// 	//read file test.json to data object
+// 	var tags = [
+// 	  "ActionScript",
+//       "AppleScript",
+//       "Asp",
+//       "BASIC",
+//       "C",
+//       "C++",
+//       "Clojure",
+//       "COBOL",
+//       "ColdFusion",
+//       "Erlang",
+//       "Fortran",
+//       "Groovy",
+//       "Haskell",
+//       "Java",
+//       "JavaScript",
+//       "Lisp",
+//       "Perl",
+//       "PHP",
+//       "Python",
+//       "Ruby",
+//       "Scala",
+//       "Scheme"
+// 	];
+
+// 	$( "#search" ).autocomplete({
+// 		source: tags 
+// 	});
+// });
+
+$(document).ready(function() {
+    var myItems;
+
+    $.getJSON('test.json', function(data) {
+    	console.log(data);
+        myItems = data.items;
+        console.log(myItems);
+    });
+});
 
 
