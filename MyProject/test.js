@@ -1,3 +1,21 @@
+$.getJSON( "./t.json", function( data ) {
+	console.log(data);
+
+	//convert data object to values array
+	const values = Object.values(data);
+	console.log(values); 
+	$( function() { 
+    $( "#search" ).autocomplete({  // #search is the id of the input element 
+      source: values 
+	
+	//source: values is the list of available values*/ 
+  
+  
+    	}); 
+	});
+}); 
+
+
 // detect mobile
 var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 		// element desktop version
@@ -60,10 +78,10 @@ var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 // creat countdownt timer
 
-var countdowntTime = new Date("Feb 14 , 2020 23:59:00").getTime();
+var countdowntTime = new Date("Feb 16 , 2020 23:59:00").getTime();
 
 var x = setInterval(function(){
-	var timeNow = new Date();
+	var timeNow = new Date(); 
 	var distance = countdowntTime - timeNow;
 
 
@@ -81,49 +99,4 @@ var x = setInterval(function(){
    	}
 
 }, 1000);
-
-//creat suggestion search box
- 
-// $(function(){
-// 	//read file test.json to data object
-// 	var tags = [
-// 	  "ActionScript",
-//       "AppleScript",
-//       "Asp",
-//       "BASIC",
-//       "C",
-//       "C++",
-//       "Clojure",
-//       "COBOL",
-//       "ColdFusion",
-//       "Erlang",
-//       "Fortran",
-//       "Groovy",
-//       "Haskell",
-//       "Java",
-//       "JavaScript",
-//       "Lisp",
-//       "Perl",
-//       "PHP",
-//       "Python",
-//       "Ruby",
-//       "Scala",
-//       "Scheme"
-// 	];
-
-// 	$( "#search" ).autocomplete({
-// 		source: tags 
-// 	});
-// });
-
-$(document).ready(function() {
-    var myItems;
-
-    $.getJSON('test.json', function(data) {
-    	console.log(data);
-        myItems = data.items;
-        console.log(myItems);
-    });
-});
-
 
