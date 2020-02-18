@@ -1,16 +1,17 @@
+//creat sugesstion search
+
 $.getJSON( "./t.json", function( data ) {
 	console.log(data);
 
 	//convert data object to values array
 	const values = Object.values(data);
+
 	console.log(values); 
 	$( function() { 
     $( "#search" ).autocomplete({  // #search is the id of the input element 
       source: values 
 	
 	//source: values is the list of available values*/ 
-  
-  
     	}); 
 	});
 }); 
@@ -78,14 +79,14 @@ var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 // creat countdownt timer
 
-var countdowntTime = new Date("Feb 16 , 2020 23:59:00").getTime();
+var countdowntTime = new Date("Feb 19 , 2020 23:59:00").getTime();
 
 var x = setInterval(function(){
-	var timeNow = new Date(); 
+	var timeNow = new Date().getTime(); 
 	var distance = countdowntTime - timeNow;
 
 
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var hours = ( Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) ) + (Math.floor(distance / (1000 * 60 * 60 * 24)) * 24);
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 

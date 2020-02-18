@@ -92,11 +92,11 @@ body,html {
 .second-menu .iconSearch {
     background: black;
     width: 70px;
+    cursor: pointer;
 } 
 
 i.fa.fa-search {
     padding-left: 20px;
-    padding-top: 10px;
     color: white;
     font-size: 30px;
 }
@@ -190,6 +190,7 @@ input#search {
 
 .displayproduct .menu .right p {
 	padding-left: 20px;
+	cursor: pointer;
 }
 
 .displayproduct .menu .left {
@@ -198,7 +199,8 @@ input#search {
 }
 
 .displayproduct .menu .left p {
-	padding-left: 5%;
+	padding-left: 4%;
+	font-size: 15px;
 	padding-top: 10px;
 }
 
@@ -433,13 +435,17 @@ input#search {
 	display: flex;
 }
 
-.footer .content-right .bottom .text {
-	padding-bottom: 20px;
-}
 
 .footer .content-right .bottom .payment {
 	padding-left: 44%;
 }
+
+.footer .content-right .bottom .payment .icon-payment {
+	float: left;
+}
+
+
+
 
 
 /*mobile version*/
