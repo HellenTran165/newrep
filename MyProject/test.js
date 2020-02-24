@@ -1,21 +1,94 @@
 //creat sugesstion search
+	$(document).ajaxStart(function() {
+		$("#glass").css("display", "none");
+		$("#loading-icon").css("display", "block");
+		
 
-$.getJSON( "./t.json", function( data ) {
-	console.log(data);
-
-	//convert data object to values array
-	const values = Object.values(data);
-
-	console.log(values); 
-	$( function() { 
-    $( "#search" ).autocomplete({  // #search is the id of the input element 
-      source: values 
-	
-	//source: values is the list of available values*/ 
-    	}); 
 	});
-}); 
 
+	$(document).ajaxComplete(function() {
+		setTimeout( function(){
+			$("#glass").css("display", "block");
+			$("#loading-icon").css("display", "none");
+			
+		}, 700);
+		
+
+	});
+
+function debounce(func, wait) {
+  return function() {
+    var context = this,
+        args = arguments;
+
+    var executeFunction = function() {
+      func.apply(context, args);
+    }
+
+    setTimeout(executeFunction, wait);
+  }
+}
+
+
+	function getData(){
+		var items=[];
+		$.ajax({
+			url : 't.json',
+			datatype : 'json',
+
+			success: function(data){
+				$.each(data, function(key, val) {
+				 items.push(val);
+				});
+			}
+		})
+		return items;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+	var handleKey = debounce(function(){
+		if($("#search").length > 0){
+					$( "#search").keydown(function(){
+					var values = getData();
+					$( "#search" ).autocomplete({  // #search is the id of the input element 
+
+      				source: values //source: values is the list of available values*/ 
+				});
+    		});
+		}
+	} ,500);
+
+	$("#search").keydown(handleKey);
 
 // detect mobile
 var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);

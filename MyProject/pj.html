@@ -6,11 +6,17 @@
 	<meta name="description" content="this is content for SEO website">
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 	<script type="text/javascript" src="vendor/bootstrap.js"></script>
-	
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	
+	
+  	<script type="text/javascript" src="vendor/underscore.js"></script>
+	<script type="text/javascript" src="vendor/underscore-min.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
 	<link rel="stylesheet" href="vendor/bootstrap.css">
 	<link rel="stylesheet" href="vendor/font-awesome.css">
@@ -99,7 +105,7 @@
 
 		<!-- end adv -->
 
-
+		
 		<div class="container second-menu" id="second-menu-dt">
 			<div class="row">
 				<div class="col-md-3 ">
@@ -114,7 +120,10 @@
 					<div class="search ">
 						<div class="row">
 						<input type="search" id="search" placeholder="Search entire store here ..." />
-						<div class="iconSearch" title="search"><i class="fa fa-search" aria-hidden="true"></i></div>
+						<div class="iconSearch" title="search">
+							<div class=" spinner-border text-light" id="loading-icon" style="display: none; "></div>
+							<i class="search-icon fa fa-search" aria-hidden="true" id="glass"></i></div>
+
 						</div>
 					</div>
 				</div>
