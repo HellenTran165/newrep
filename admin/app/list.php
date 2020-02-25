@@ -1,10 +1,18 @@
 <?php
 	include("config.php"); 
-	$sql_list="SELECT * FROM qlsp";
-	$row_list=mysql_query($sql_list);
+  try {
+    $sql_list="SELECT * FROM qlsp";
+    $row_list=mysql_query($sql_list);
+  
+  } catch (Exception $e) {
+
+  }
+
+    mysql_close($conn);
+	
 ?>
 <a href="add.php">
-  <button style="margin-bottom: 50px; margin-top: 20px; margin-left: 50%; transform: translateX(-50%); padding: 10px 10px;">ADD NEW PRODUCTS</button>
+  <button style="cursor: pointer; margin-bottom: 50px; margin-top: 20px; margin-left: 50%; transform: translateX(-50%); padding: 10px 10px;">ADD NEW PRODUCTS</button>
 </a>
 
 

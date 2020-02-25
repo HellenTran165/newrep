@@ -1,9 +1,17 @@
 <h3>EDIT PRODUCT</h3>
 <?php
 include("config.php");
-	$sql = "SELECT * FROM qlsp WHERE id = '$_GET[id]'";
-	$row = mysql_query($sql);
-	$dong = mysql_fetch_array($row);
+	try {
+		$sql = "SELECT * FROM qlsp WHERE id = '$_GET[id]'";
+		$row = mysql_query($sql);
+		$dong = mysql_fetch_array($row);
+		
+	} catch (Exception $e) {
+		
+	}
+
+	mysql_close($conn);
+	
  ?>
 
 

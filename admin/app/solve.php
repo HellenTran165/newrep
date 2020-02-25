@@ -9,32 +9,47 @@
 	$giasp = $_POST['gia'];
 
 	if(isset($_POST['them'])) {
-		$sql_themSP = ("insert into qlsp(tensp , loaisp, anh, gia) values('$tensp' , '$loaisp' , '$anhsp' , '$giasp')");
-		mysql_query($sql_themSP);
+		try {
+			$sql_themSP = ("insert into qlsp(tensp , loaisp, anh, gia) values('$tensp' , '$loaisp' , '$anhsp' , '$giasp')");
+			mysql_query($sql_themSP);
 
-		header('location:list.php');
+			header('location:list.php');
+		} catch (Exception $e) {
+			
+		}
+		mysql_close($con);
 	} 
 
 	else if(isset($_POST['sua'])){
+		try {
+			if($anhsp != ''){
+				$sql_suaSP = "UPDATE qlsp SET tensp='$tensp', loaisp='$loaisp', anh='$anhsp', gia='$giasp' WHERE id='$_GET[id]'";
+				mysql_query($sql_suaSP);
+				header('location:list.php');
+			}
 
-		if($anhsp != ''){
-			$sql_suaSP = "UPDATE qlsp SET tensp='$tensp', loaisp='$loaisp', anh='$anhsp', gia='$giasp' WHERE id='$_GET[id]'";
-			mysql_query($sql_suaSP);
-			header('location:list.php');
+			else{
+				$sql_suaSP = "UPDATE qlsp SET tensp='$tensp', loaisp='$loaisp', gia='$giasp' WHERE id='$_GET[id]'";
+				mysql_query($sql_suaSP);
+				header('location:list.php');
+			}
+		} 
+		catch (Exception $e) {
+			
 		}
 
-		else{
-			$sql_suaSP = "UPDATE qlsp SET tensp='$tensp', loaisp='$loaisp', gia='$giasp' WHERE id='$_GET[id]'";
-			mysql_query($sql_suaSP);
-			header('location:list.php');
-		}
+		mysql_close($conn);
 		
 	}
 	else{
-		
-		$sql_xoaSP = "DELETE FROM qlsp WHERE id='$_GET[id]'";
-		mysql_query($sql_xoaSP);
+		try {
+			$sql_xoaSP = "DELETE FROM qlsp WHERE id='$_GET[id]'";
+			mysql_query($sql_xoaSP);
 
-		header('location:list.php');
+			header('location:list.php');
+		} catch (Exception $e) {
+			
+		}
+		mysql_close($conn);
 	}
  ?>
