@@ -43,38 +43,7 @@ function debounce(func, wait) {
 			}
 		})
 		return items;
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		
+	}		
 
 	var handleKey = debounce(function(){
 		if($("#search").length > 0){
@@ -152,7 +121,7 @@ var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 // creat countdownt timer
 
-var countdowntTime = new Date("Feb 19 , 2020 23:59:00").getTime();
+var countdowntTime = new Date("Feb 27 , 2020 23:59:00").getTime();
 
 var x = setInterval(function(){
 	var timeNow = new Date().getTime(); 
