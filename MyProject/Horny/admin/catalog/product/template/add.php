@@ -1,7 +1,7 @@
 <?php 
 	class addTemplate {
 		public function toHTML(){
-			ob_start() ?>
+			?>
 				<h3>ADD NEW PRODUCTS</h3>
 
 			<form action="" method="post" enctype="multipart/form-data">
@@ -55,7 +55,6 @@
 				
 			</form>
 			<?php
-			return ob_get_clean();
 		}
 	}
  ?>

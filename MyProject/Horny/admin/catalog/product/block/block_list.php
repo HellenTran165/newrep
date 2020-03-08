@@ -1,4 +1,4 @@
-<?php 
+ <?php 
 
 	class Block_L {
 		protected $db;

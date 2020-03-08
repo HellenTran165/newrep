@@ -1,14 +1,13 @@
-<?php 
+<?php  
   class listTemplate{
     protected $data;
-    
+
     public function setData($data){
       $this->data = $data;
 
     }
     public function toHtml(){   
-    ob_start(); ?>
-        
+          ?>    
           <a href="index.php?controller=produc&action=add">
             <button style="cursor: pointer; margin-bottom: 50px; margin-top: 20px; margin-left: 50%; transform: translateX(-50%); padding: 10px 10px;">ADD NEW PRODUCTS</button>
           </a>
@@ -44,9 +43,7 @@
               ?>
             
           </table>
-        
         <?php
-       return ob_get_clean();
         }  
     }
 ?>

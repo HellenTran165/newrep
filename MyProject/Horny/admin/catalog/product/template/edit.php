@@ -6,7 +6,7 @@
 		}
 
 		public function toHTML(){
-			ob_start(); ?>
+			 ?>
         	<h3>EDIT PRODUCT</h3>
 
  			<form action="" method="post" enctype="multipart/form-data">
@@ -70,7 +70,6 @@
           </form>
         
         <?php
-       return ob_get_clean();
 		}
 	}
  ?>
