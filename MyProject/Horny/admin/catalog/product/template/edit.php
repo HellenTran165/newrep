@@ -74,4 +74,3 @@
 	}
  ?>
 
- https://freetuts.net/lenh-require-require_once-include-include_once-trong-php-647.html
