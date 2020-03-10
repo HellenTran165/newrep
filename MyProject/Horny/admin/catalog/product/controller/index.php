@@ -23,7 +23,7 @@
 			$blockEdit->setConfig($cf);
 			echo $blockEdit->renderEditLayout()->toHTML();
 			$blockEdit->setData();
-		}
+		} 
 		else{
 			if($action == 'delete'){
 				include("catalog/product/block/block_delete.php");

@@ -1,7 +1,7 @@
 <?php 
 	include("core/config.php");
 	$db = new Database();
-	$db->connect();
+	include("core/setup.php");
 
 	include("core/model.php");
 	$cf = new Config();
