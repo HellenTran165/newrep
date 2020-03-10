@@ -38,14 +38,14 @@
 					Hinh Anh
 				</td>
 				<td>
-					<input type="file" name="hinhanh" />
+					<input type="file" accept="image/x-png,image/gif,image/jpeg" name="hinhanh" />
 					<img src="catalog/product/uploads/<?php echo $value['anh'] ?>" width="80" height="80">
 				</td>
 			</tr>
 
 			<tr>
 				<td>
-					Gia
+					Gia 
 				</td>
 				<td>
 					<input type="text" name="gia" value="<?php echo $value['gia'] ?>">
@@ -73,3 +73,5 @@
 		}
 	}
  ?>
+
+ https://freetuts.net/lenh-require-require_once-include-include_once-trong-php-647.html

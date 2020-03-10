@@ -1,3 +1,11 @@
+<?php 
+	include("admin/core/config.php");
+	$db = new Database();
+	$db->connect();
+	$row = $db->getDataToCategory();
+	$rowc = $db->getDataToCard();	
+?>
+
 <div class="container adv desktop-version" id="adv-dt">
  			<div class="row">
  				<div class="col-md-12">
@@ -293,47 +301,28 @@
 						<p>Lube & Better sex</p>
 					</div>
 				
-			</div>		
+			</div>
+
 			<div class="row item">
-			
+						<?php 
+							while($linec = mysql_fetch_array($rowc)){
+						 ?>
 						<div class="col-md-3">
-							<img src="modules/images/n1.png" alt="this's display picture">
+							<img src="admin/catalog/product/uploads/<?php echo $linec['anh'] ?>" alt="this's display picture">
 							<div class="bottom">
 								<button class="btn btn-primary button" style="background-color: #FF5B8F;" title="add to cart">ADD TO CART</button>
 								<p>Horny product</p>
-								<h5>Damn Realistic Cock (Glossy V)</h5>
+								<h5><?php echo $linec['tensp'] ?></h5>
 
-								<h6><del>$412</del> $369</h6>
-
-								<p class="star"><img src="modules/images/star-c.png" alt="this's display picture"><img src="modules/images/star-c.png" alt="this's display picture"><img src="modules/images/star-c.png" alt="this's display picture"><img src="modules/images/star-c.png" alt="this's display picture"><img src="modules/images/star-w.png" alt="this's display picture"></p>
-							</div>
-						</div>
-
-						<div class="col-md-3">
-							<img src="modules/images/n2.png" alt="this's display picture">
-							<div class="bottom">
-								<button class="btn btn-primary button" style="background-color: #FF5B8F;" title="add to cart">ADD TO CART</button>
-								<p>Horny product</p>
-								<h5>Damn Realistic Cock (Glossy V)</h5>
-
-								<h6><del>$412</del> $369</h6>
+								<h6><del>$412</del> <?php echo $linec['gia'] ?></h6>
 
 								<p class="star"><img src="modules/images/star-c.png" alt="this's display picture"><img src="modules/images/star-c.png" alt="this's display picture"><img src="modules/images/star-c.png" alt="this's display picture"><img src="modules/images/star-c.png" alt="this's display picture"><img src="modules/images/star-w.png" alt="this's display picture"></p>
 							</div>
 						</div>
 
-						<div class="col-md-3">
-							<img src="modules/images/n3.png" alt="this's display picture">
-							<div class="bottom">
-								<button class="btn btn-primary button" style="background-color: #A94442;" title="add to cart">ADD TO CART</button>
-								<p>Fun Factory Primeum Sapphic</p>
-								<h5>Damn Realistic Cock (Glossy V)</h5>
-
-								<h6><del>$412</del> $369</h6>
-
-								<p class="star"><img src="modules/images/star-c.png" alt="this's display picture"><img src="modules/images/star-c.png" alt="this's display picture"><img src="modules/images/star-c.png" alt="this's display picture"><img src="modules/images/star-c.png" alt="this's display picture"><img src="modules/images/star-w.png" alt="this's display picture"></p>
-							</div>
-						</div>
+						<?php 
+							}
+						 ?>
 
 						<div class="col-md-3">
 							<img src="modules/images/n4.png" alt="this's display picture">
@@ -436,20 +425,14 @@
 			
 
 
-			<?php 
-				include("modules/configModules.php");
-
-				$sql = "SELECT * FROM qlsp ORDER BY id DESC LIMIT 6";
-				$row_sql = mysql_query($sql);
-				
-			 ?>
+			
 			<div class="category">
 				<div class="text">SHOP BY CATEGORY</div>
 				<p class="under"></p>
 
 				<div class="row p1-category">
 					<?php 
-						while($line = mysql_fetch_array($row_sql)){
+						while($line = mysql_fetch_array($row)){
 					 ?>
 					<div class="col-md-4 _1item left">
 						<img src="admin/catalog/product/uploads/<?php echo $line['anh'] ?>" alt="this's display picture">

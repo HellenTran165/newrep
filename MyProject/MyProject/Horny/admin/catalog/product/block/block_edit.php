@@ -1,5 +1,7 @@
 <?php 
-	
+	include("catalog/product/template/edit.php");
+	include("catalog/product/template/list.php");
+
 	class Block_E {
 
 		protected $db;
@@ -30,15 +32,23 @@
 				move_uploaded_file($anhsp_tmp, 'catalog/product/uploads/'.$anhsp);
 				$giasp = $_POST['gia'];
 				$id = $_GET['id'];
-				$this->cf->edit($tensp , $loaisp, $anhsp, $giasp, $id);
 
-				header('location:index.php?controller=product&action=list');
+				try{
+					$this->cf->edit($tensp , $loaisp, $anhsp, $giasp, $id);
+
+				    header('location:index.php?controller=product&action=list');
+
+				}
+				catch(Exception $e){
+					echo 'database not working', $e->getMessage();
+				}
+				
 			}
 		}
 
 		
 		public function renderEditLayout(){
-			include("catalog/product/template/edit.php");
+			
 			$editTemplate = new editTemplate();
 			$lineData = $this->getData();
 			$editTemplate->setData($lineData);

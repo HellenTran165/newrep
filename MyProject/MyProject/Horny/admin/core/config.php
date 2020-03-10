@@ -42,7 +42,7 @@
 
 			if($this->num_row() == 0){
 				$data[] = 0;
-			}
+			}  
 			else{
 				while($datas = $this->getData()){
 					$data[] = $datas;
@@ -74,6 +74,20 @@
 				$num = 0;
 			}
 			return $num;
+		}
+
+		public function getDataToCategory(){
+			$sql = "SELECT * FROM qlsp LIMIT 6";
+			$row_sql = mysql_query($sql);
+
+			return $row_sql;
+		}
+
+		public function getDataToCard(){
+			$sql = "SELECT * FROM qlsp ORDER BY id DESC LIMIT 3";
+			$row = mysql_query($sql);
+
+			return $row;
 		}
 
 		
