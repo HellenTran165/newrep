@@ -1,10 +1,4 @@
-<?php 
-	include("admin/core/config.php");
-	$db = new Database();
-	$db->connect();
-	$row = $db->getDataToCategory();
-	$rowc = $db->getDataToCard();	
-?>
+
 
 <div class="container adv desktop-version" id="adv-dt">
  			<div class="row">
@@ -13,7 +7,6 @@
 				</div>
  			</div>
  		</div>
- 		
  		
 
 		<!-- end adv -->
@@ -302,6 +295,14 @@
 					</div>
 				
 			</div>
+			
+			<?php 
+			include("admin/core/config.php");
+			$db = new Database();
+			$db->connect();
+			$row = $db->getDataToCategory();
+			$rowc = $db->getDataToCard();	
+			?>
 
 			<div class="row item">
 						<?php 

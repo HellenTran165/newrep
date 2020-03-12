@@ -22,7 +22,7 @@
             </tr>
            
             <?php
-                
+            
                 foreach ($this->data as $value) {
 
               ?> 
@@ -34,8 +34,8 @@
                 </td>     
                 <td><?php echo $value{'gia'}?></td>
                 <td>
-                  <a href="index.php?id=<?php echo $value{'id'} ?>?controller=product&action=edit" style="padding: 10px; color: white; background-color: green; text-decoration: none; border: 1px solid green;">edit</a>
-                  <a href="index.php?id=<?php echo $value{'id'} ?>?controller=product&action=delete" style="padding: 10px; color: white; background-color: red; text-decoration: none; border: 1px solid red;">delete</a>
+                  <a href="index.php?id=<?php echo $value{'id'} ?>&controller=product&action=edit" style="padding: 10px; color: white; background-color: green; text-decoration: none; border: 1px solid green;">edit</a>
+                  <a href="index.php?id=<?php echo $value{'id'} ?>&controller=product&action=delete" style="padding: 10px; color: white; background-color: red; text-decoration: none; border: 1px solid red;">delete</a>
                 </td>   
               </tr>  
               <?php

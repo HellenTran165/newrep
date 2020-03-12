@@ -16,7 +16,7 @@
 		}	
 
 	else
-		if($action == 'edit'){
+		if($action == 'edit'){   
 			include("catalog/product/block/block_edit.php");
 			$blockEdit = new Block_E();
 			$blockEdit->setDB($db);
@@ -30,7 +30,6 @@
 				$blockDelete = new Block_D();
 				$blockDelete->setConfig($cf);
 				$blockDelete->destroy();
-
 			}
 			else{	
 					include("catalog/product/block/block_list.php");
