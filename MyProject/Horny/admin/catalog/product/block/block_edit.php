@@ -25,18 +25,18 @@
 
 		public function setData(){
 			if(isset($_POST['sua'])){
-				$tensp = $_POST['ten'];
+				$tensp = $_POST['ten']; 
 				$loaisp = $_POST['loai'];
 				$anhsp = $_FILES['hinhanh']['name'];
 				$anhsp_tmp = $_FILES['hinhanh']['tmp_name'];
 				move_uploaded_file($anhsp_tmp, 'catalog/product/uploads/'.$anhsp);
 				$giasp = $_POST['gia'];
 				$id = $_GET['id'];
-
+                
 				try{
 					$this->cf->edit($tensp , $loaisp, $anhsp, $giasp, $id);
 
-				    header('location:index.php?controller=product&action=list');
+				    header('location:product-list.html');
 
 				}
 				catch(Exception $e){

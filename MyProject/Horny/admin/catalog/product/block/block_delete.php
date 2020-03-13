@@ -10,7 +10,7 @@
 			$id = $_GET['id'];
 			try{
 				$this->cf->delete($id);
-				header('location:index.php?controller=product&action=list');
+				header('location:product-list.html');
 			}
 			catch(Exception $e){
 				echo 'database not working', $e->getMessage();

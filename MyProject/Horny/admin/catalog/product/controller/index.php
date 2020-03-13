@@ -16,7 +16,7 @@
 		}	
 
 	else
-		if($action == 'edit'){   
+		if($action == 'edit'){  
 			include("catalog/product/block/block_edit.php");
 			$blockEdit = new Block_E();
 			$blockEdit->setDB($db);

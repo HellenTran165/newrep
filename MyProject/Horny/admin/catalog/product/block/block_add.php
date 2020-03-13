@@ -21,7 +21,7 @@
 					try{
 						$this->cf->add($tensp , $loaisp, $anhsp, $giasp);
 
-						header('location:index.php?controller=product&action=list');
+						header('location:product-list.html');
 					}
 					catch(Exception $e){
 						echo 'database not working', $e->getMessage();

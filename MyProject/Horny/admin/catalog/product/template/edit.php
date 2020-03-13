@@ -83,12 +83,18 @@
 			</table>	
             
           </form>
-
+		  
       	</body>
+
+		</html>
+
+
         <?php
         //https://www.studentstutorial.com/ajax/update-data
         //https://wiki.matbao.net/kb/ajax-la-gi-cach-su-dung-ajax-toi-uu-nhat/
 		}
+
+
 	}
  ?>
 

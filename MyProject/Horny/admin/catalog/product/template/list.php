@@ -8,7 +8,7 @@
     }
     public function toHtml(){   
           ?>    
-          <a href="index.php?controller=produc&action=add">
+          <a href="product-add.html">
             <button style="cursor: pointer; margin-bottom: 50px; margin-top: 20px; margin-left: 50%; transform: translateX(-50%); padding: 10px 10px;">ADD NEW PRODUCTS</button>
           </a>
           <h4>MY PRODUCTS LIST</h4>
@@ -34,7 +34,7 @@
                 </td>     
                 <td><?php echo $value{'gia'}?></td>
                 <td>
-                  <a href="index.php?id=<?php echo $value{'id'} ?>&controller=product&action=edit" style="padding: 10px; color: white; background-color: green; text-decoration: none; border: 1px solid green;">edit</a>
+                  <a href="product-<?php echo $value{'id'} ?>-edit.html" style="padding: 10px; color: white; background-color: green; text-decoration: none; border: 1px solid green;">edit</a>
                   <a href="index.php?id=<?php echo $value{'id'} ?>&controller=product&action=delete" style="padding: 10px; color: white; background-color: red; text-decoration: none; border: 1px solid red;">delete</a>
                 </td>   
               </tr>  
