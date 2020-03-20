@@ -7,7 +7,8 @@
 			$this->cf = $cf;
 		}
 		public function destroy(){
-			$id = $_GET['id'];
+			if(isset($_POST['id'])){
+			$id = $_POST['id'];
 			try{
 				$this->cf->delete($id);
 				header('location:product-list.html');
@@ -15,6 +16,7 @@
 			catch(Exception $e){
 				echo 'database not working', $e->getMessage();
 			}
+		}
 			
 		}
 	}

@@ -16,6 +16,7 @@
   			<meta charset="utf-8">
   			<meta name="viewport" content="width=device-width, initial-scale=1">
   			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  			
   			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -35,7 +36,7 @@
              <tr>
 				<td width="97"> Ten Sp</td>
 				<td width="87">
-				<input type="text" name="ten" value="<?php echo $value['tensp'] ?>">
+				<input id="name_val" type="text" name="ten" value="<?php echo $value['tensp'] ?>">
 				</td>
 			</tr>
 
@@ -44,7 +45,7 @@
 					Loai Sp
 				</td>
 				<td>
-					<input type="text" name="loai" value="<?php echo $value['loaisp'] ?>">
+					<input id="type_val" type="text" name="loai" value="<?php echo $value['loaisp'] ?>">
 				</td>
 			</tr>
 
@@ -53,7 +54,7 @@
 					Hinh Anh
 				</td>
 				<td>
-					<input type="file" accept="image/x-png,image/gif,image/jpeg" name="hinhanh" />
+					<input id="image_val" type="file" accept="image/x-png,image/gif,image/jpeg" name="hinhanh" />
 					<img src="catalog/product/uploads/<?php echo $value['anh'] ?>" width="80" height="80">
 				</td>
 			</tr>
@@ -63,16 +64,15 @@
 					Gia 
 				</td>
 				<td>
-					<input type="text" name="gia" value="<?php echo $value['gia'] ?>">
+					<input id="price_val" type="text" name="gia" value="<?php echo $value['gia'] ?>">
 				</td>
 			</tr>
 
 			<tr>
 	    		<td style="text-align: center;" colspan="2">
-	      		<input type="submit" name="sua" value="Edit">
-	      		<!-- <a href="list.php">
-	      			<button >Cancel</button>
-	      		</a>    -->
+	    		<input type="hidden" name="id" value="<?php echo $value['id'] ?>"> 
+	      		<input   type="submit" name="sua" value="Edit" onclick="save_row('<?php echo $value['id'] ?>')">
+	   
 
 	      		<input type="button" value="Cancel" onclick="history.back(-1)" />		
 				</td>
@@ -86,10 +86,14 @@
 		  
       	</body>
 
+      	<script type="text/javascript" src="catalog/product/template/edit.js"></script>
+
 		</html>
 
 
         <?php
+        //http://techzaurus.blogspot.com/2017/08/how-to-make-crud-system-using-ajax.html
+        //https://www.webslesson.info/2019/02/update-or-edit-data-using-jquery-dialogify-with-php-ajax.html
         //https://www.studentstutorial.com/ajax/update-data
         //https://wiki.matbao.net/kb/ajax-la-gi-cach-su-dung-ajax-toi-uu-nhat/
 		}

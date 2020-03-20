@@ -17,10 +17,11 @@
 
 		public function getData(){
 			$tb = "qlsp";
-			$id = $_GET['id'];
-			$data = $this->db->getDataId($tb, $id);
-
+			if(isset($_POST['id'])){
+			$idE = $_POST['id'];
+			$data = $this->db->getDataId($tb, $idE);
 			return $data;
+			}
 		}
 
 		public function setData(){
@@ -31,10 +32,10 @@
 				$anhsp_tmp = $_FILES['hinhanh']['tmp_name'];
 				move_uploaded_file($anhsp_tmp, 'catalog/product/uploads/'.$anhsp);
 				$giasp = $_POST['gia'];
-				$id = $_GET['id'];
-                
+				$idE = $_POST['id'];
+               
 				try{
-					$this->cf->edit($tensp , $loaisp, $anhsp, $giasp, $id);
+					$this->cf->edit($tensp, $loaisp, $anhsp, $giasp, $idE);
 
 				    header('location:product-list.html');
 

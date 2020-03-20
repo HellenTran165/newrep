@@ -1,11 +1,8 @@
 <?php 
 
-	if(isset($_GET['action'])){
-		$action = $_GET['action'];
-	}
-	else {
-		$action = '';
-	}
+	
+	$action = $rs['action'];
+
 
 	if($action == 'add'){
 		include("catalog/product/block/block_add.php");
@@ -22,7 +19,7 @@
 			$blockEdit->setDB($db);
 			$blockEdit->setConfig($cf);
 			echo $blockEdit->renderEditLayout()->toHTML();
-			$blockEdit->setData();
+			
 		} 
 		else{
 			if($action == 'delete'){

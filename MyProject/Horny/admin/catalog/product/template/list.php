@@ -21,21 +21,33 @@
               <td>Quản lí</td>
             </tr>
            
+            
             <?php
             
                 foreach ($this->data as $value) {
+                 
 
               ?> 
               <tr>
-                
+                <input type="hidden" name="id" value="<?php echo $value['id']; ?>">
                 <td><?php echo $value{'tensp'}?></td>     
                 <td><?php echo $value{'loaisp'}?></td>      
                 <td><img src="catalog/product/uploads/<?php echo $value{'anh'} ?>" width="80" height="80" />
                 </td>     
                 <td><?php echo $value{'gia'}?></td>
-                <td>
-                  <a href="product-<?php echo $value{'id'} ?>-edit.html" style="padding: 10px; color: white; background-color: green; text-decoration: none; border: 1px solid green;">edit</a>
-                  <a href="index.php?id=<?php echo $value{'id'} ?>&controller=product&action=delete" style="padding: 10px; color: white; background-color: red; text-decoration: none; border: 1px solid red;">delete</a>
+                <td>  
+                  <div style="display: flex; text-align: center; margin-left: 50%; transform: translateX(-50%);">
+                  <form action="product-edit.html" method="post">
+                    
+                    <input type="hidden" name="id" value="<?php echo $value['id']; ?>">  
+                    <input type="submit" name="idE" value="Edit" style="background-color: green; padding: 5px 13px;">  
+                    </form> 
+
+                    <form action="product-delete.html" method="post">
+                    <input type="hidden" name="id" value="<?php echo $value['id']; ?>"> 
+                    <input type="submit" name="idD" value="Delete" style="background-color: red; padding: 5px 5px;"> 
+                  </form> 
+                </div>
                 </td>   
               </tr>  
               <?php
@@ -43,6 +55,7 @@
               ?>
             
           </table>
+          
         <?php
         }  
     }
