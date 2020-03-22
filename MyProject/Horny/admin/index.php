@@ -8,7 +8,7 @@
 	include("core/model.php");
 	$cf = new Config();
 
-	include("catalog/product/template/edit_ajax.php");
+	include("catalog/product/template/update_ajax.php");
 	
 	function detectURL(){
 		    $result = array();
@@ -31,7 +31,7 @@
 		            $result = array('controller'=>'product', 'action'=>'delete');
 		            break;
 		        default:
-		            $result = array('controller'=>'product', 'action'=>'error');
+		            $result = array('controller'=>'product', 'action'=>'list');
 		            break;
 		    }
 		    return $result;
