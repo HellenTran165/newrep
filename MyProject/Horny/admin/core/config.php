@@ -2,7 +2,7 @@
 	class Database {
 		protected $hostname = 'localhost';
 		protected $username = 'root';
-		protected $password = '';
+		protected $password = 'root';
 		protected $dbname = 'qlsp_test';
 
 		protected $conn = null;

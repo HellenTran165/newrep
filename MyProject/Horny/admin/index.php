@@ -14,8 +14,11 @@
 		    $result = array();
 		    $path = ltrim($_SERVER['REQUEST_URI'], '/');    
 		    $elements = explode('/', $path);                
-		    $firt = array_shift($elements);                    
-		    $second = array_shift($elements);                    
+		    $str_1 = array_shift($elements);                    
+		    $str_2 = array_shift($elements);                    
+		    $str_3 = array_shift($elements);                    
+		    $str_4 = array_shift($elements);                    
+		    $str_5 = array_shift($elements);                    
 		    
 		    switch (array_shift($elements)) {
 		        case 'products-list.html':
