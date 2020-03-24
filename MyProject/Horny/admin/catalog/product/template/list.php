@@ -21,8 +21,8 @@
             </head>
             <body> 
 
-            <a href="product-add.html">
-            <button style="cursor: pointer; margin-bottom: 50px; margin-top: 20px; margin-left: 50%; transform: translateX(-50%); padding: 10px 10px;">ADD NEW PRODUCTS</button>
+            <a  href="product-add.html">
+            <button style="cursor: pointer; margin-bottom: 50px; margin-top: 20px; margin-left: 50%; transform: translateX(-50%); padding: 10px 10px; background-color: purple; color: white;">ADD NEW PRODUCTS</button>
             </a>
 
             <!-- show list product from database -->
@@ -47,7 +47,7 @@
                 <input type="hidden" name="id" value="<?php echo $value['id']; ?>">
                 <td><?php echo $value{'tensp'}?></td>     
                 <td><?php echo $value{'loaisp'}?></td>      
-                <td><img src="catalog/product/uploads/<?php echo $value{'anh'} ?>" width="80" height="80" />
+                <td><img src="<?php echo BASE_URL ?><?php echo $value{'anh'} ?>" width="80" height="80" />
                 </td>     
                 <td><?php echo $value{'gia'}?></td>
                 <td>  
@@ -63,9 +63,9 @@
                   </button>
 
                   <!-- delete input -->
-                  <form action="product-delete.html" method="post">
-                    <input type="hidden" name="id" value="<?php echo $value['id']; ?>"> 
-                    <input type="submit" name="idD" value="Delete" style="background-color: red; padding: 5px 5px;"> 
+                  <form action="" method="post">
+                    <input id="idD" type="hidden" name="id" value="<?php echo $value['id']; ?>"> 
+                    <input id="delete" type="submit"  value="Delete" style="background-color: red; padding: 5px 5px;"> 
                   </form> 
 
                   </div>
@@ -147,22 +147,23 @@
                   var image = button.data('image'); //c1.png.....
                   var price = button.data('price');
                   var modal = $(this);
+
                   modal.find('#name_modal').val(name);
                   modal.find('#type_modal').val(type);
                  
-                  $("#my_image").attr("src","catalog/product/uploads/"+image);
+                  $("#my_image").attr("src","<?php echo BASE_URL ?>"+image);
                   modal.find('#price_modal').val(price);
                   modal.find('#id_modal').val(id);
                 });
             });
-
+            //ajax for edit from list
             $(document).on("click", "#update_data", function() { 
                 $.ajax({
-                  url: "catalog/product/template/update_ajax.php",
+                  url: "catalog/product/controller/update_save_delete_ajax.php",
                   type: "POST",
                   cache: false,
                   data:{
-                    id: $('#id_modal').val(),
+                    idE: $('#id_modal').val(),
                     name: $('#name_modal').val(),
                     type: $('#type_modal').val(),
                     image: $('#image_modal').val().replace(/.*(\/|\\)/, ''),
@@ -174,6 +175,27 @@
                   }
                 });
               });
+
+            //ajax for delete from list
+
+          $('#delete').on('click', function() {
+          $("#delete").attr("disabled", "disabled");
+          var id = $("#idD").val();
+
+          $.ajax({
+              url: "catalog/product/controller/update_save_delete_ajax.php",
+              type: "POST",
+              data: {
+                id: id       
+              },
+              cache: false,
+              success: function(){
+                
+              }
+            });
+          });
+
+
           });
         </script>
           

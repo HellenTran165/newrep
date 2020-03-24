@@ -2,7 +2,7 @@
 	class Database {
 		protected $hostname = 'localhost';
 		protected $username = 'root';
-		protected $password = 'root';
+		protected $password = '';
 		protected $dbname = 'qlsp_test';
 
 		protected $conn = null;
@@ -66,6 +66,21 @@
 			return $data;
 		}
 
+		public function getDataHere($table){
+			$sql = "SELECT * FROM $table ORDER BY id DESC LIMIT 1";
+			$this->excute($sql);
+
+			if($this->num_row() == 0){
+				$data[] = 0;
+			}
+			else{
+				while($datas = $this->getData()){
+					$data[] = $datas;
+				}
+			}
+			return $data;
+		}
+
 		public function num_row() {
 			if($this->result){
 				$num = mysql_num_rows($this->result);
@@ -91,5 +106,12 @@
 		}
 
 		
+
+		
 	} 
+	DEFINE("BASE_URL", "catalog/product/uploads/");
+	DEFINE("ROOT_PATH", $_SERVER["DOCUMENT_ROOT"] . "catalog/product/uploads/");
+
+	DEFINE("BASE_URL_CONTROLLER", "catalog/product/controller/");
+	DEFINE("ROOT_PATH_CONTROLLER", $_SERVER["DOCUMENT_ROOT"] . "catalog/product/controller/");
  ?>

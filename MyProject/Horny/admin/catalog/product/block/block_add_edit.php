@@ -1,41 +1,33 @@
 <?php 
-	include("catalog/product/template/edit.php");
-	include("catalog/product/template/list.php");
-
-	class Block_E {
-
-		protected $db;
+	class Block_A {
 		protected $cf;
+		protected $db;
 
 		public function setDB($db){
 			$this->db = $db;
 		}
-
 		public function setConfig($cf){
 			$this->cf = $cf;
 		}
 
 		public function getData(){
 			$tb = "qlsp";
-			if(isset($_POST['id'])){
-			$idE = $_POST['id'];
-			$data = $this->db->getDataId($tb, $idE);
+			$data = $this->db->getDataHere($tb);
 			return $data;
-			}
 		}
 
-		public function setData(){
-			if(isset($_POST['sua'])){
+		public function setDataEdit(){
+			if(isset($_POST['edit'])){
 				$tensp = $_POST['ten']; 
 				$loaisp = $_POST['loai'];
 				$anhsp = $_FILES['hinhanh']['name'];
 				$anhsp_tmp = $_FILES['hinhanh']['tmp_name'];
 				move_uploaded_file($anhsp_tmp, 'catalog/product/uploads/'.$anhsp);
 				$giasp = $_POST['gia'];
-				$idE = $_POST['id'];
+				
                
 				try{
-					$this->cf->edit($tensp, $loaisp, $anhsp, $giasp, $idE);
+					$this->cf->edit_here($tensp, $loaisp, $anhsp, $giasp);
 
 				    header('location:product-list.html');
 
@@ -47,14 +39,12 @@
 			}
 		}
 
-		
-		public function renderEditLayout(){
-			
-			$editTemplate = new editTemplate();
-			$lineData = $this->getData();
-			$editTemplate->setData($lineData);
-
-			return $editTemplate;
+		public function renderAddLayout(){
+			include("catalog/product/template/add_edit.php");
+			$addTemplate = new addTemplate();
+			return $addTemplate;
 		}
+
+		
 	}
  ?>

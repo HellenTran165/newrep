@@ -5,35 +5,18 @@
 
 
 	if($action == 'add'){
-		include("catalog/product/block/block_add.php");
+		include("catalog/product/block/block_add_edit.php");
 	 	$blockAdd = new Block_A();
 	 	$blockAdd->setConfig($cf);
-	 	echo $blockAdd->renderAddlayout()->toHTML();
-	 	$blockAdd->setData();
+	 	echo $blockAdd->renderAddLayout()->toHTML();
+	 	$blockAdd->setDataEdit();
 		}	
 
-	else
-		if($action == 'edit'){  
-			include("catalog/product/block/block_edit.php");
-			$blockEdit = new Block_E();
-			$blockEdit->setDB($db);
-			$blockEdit->setConfig($cf);
-			echo $blockEdit->renderEditLayout()->toHTML();
-			
-		} 
-		else{
-			if($action == 'delete'){
-				include("catalog/product/block/block_delete.php");
-				$blockDelete = new Block_D();
-				$blockDelete->setConfig($cf);
-				$blockDelete->destroy();
-			}
-			else{	
-					include("catalog/product/block/block_list.php");
-					$block = new Block_L();
-					$block->setDB($db);
-					echo $block->renderLayout()->toHtml();
-				}
-			}
+	else{
+			include("catalog/product/block/block_list.php");
+			$block = new Block_L();
+			$block->setDB($db);
+			echo $block->renderLayout()->toHtml();
+		}	
 	
  ?>
