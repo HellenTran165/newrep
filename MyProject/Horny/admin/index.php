@@ -1,5 +1,5 @@
 <?php 
-
+	
 	include("core/config.php");
 	$db = new Database();
 
@@ -7,6 +7,8 @@
 
 	include("core/model.php");
 	$cf = new Config();
+
+	include("catalog/product/helper/def_URL.php");
 
 	include("catalog/product/controller/update_save_delete_ajax.php");
 
@@ -21,6 +23,7 @@
 		    $str_3 = array_shift($elements);                    
 		    $str_4 = array_shift($elements);                    
 		    $str_5 = array_shift($elements);                    
+		                      
 		    
 		    switch (array_shift($elements)) {
 		        case 'products-list.html':

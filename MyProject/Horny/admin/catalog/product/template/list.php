@@ -27,7 +27,7 @@
 
             <!-- show list product from database -->
             <h4>MY PRODUCTS LIST</h4>
-            <table style="text-align: center;" width="100%" border="1">
+            <table id="list" style="text-align: center;" width="100%" border="1">
               <tr>
                 <td>Tên sản phẩm</td> 
                 <td>Loại sản phẩm</td>
@@ -44,7 +44,7 @@
 
               ?> 
               <tr>
-                <input type="hidden" name="id" value="<?php echo $value['id']; ?>">
+                
                 <td><?php echo $value{'tensp'}?></td>     
                 <td><?php echo $value{'loaisp'}?></td>      
                 <td><img src="<?php echo BASE_URL ?><?php echo $value{'anh'} ?>" width="80" height="80" />
@@ -62,11 +62,12 @@
                   >Edit
                   </button>
 
-                  <!-- delete input -->
-                  <form action="" method="post">
-                    <input id="idD" type="hidden" name="id" value="<?php echo $value['id']; ?>"> 
-                    <input id="delete" type="submit"  value="Delete" style="background-color: red; padding: 5px 5px;"> 
-                  </form> 
+      
+                  <!-- delete button -->
+                  <button  style="background-color: red; width: 55px; height: 34px;" type="button" class="btn btn-success btn-sm update" data-toggle="modal" data-keyboard="false" data-backdrop="static" data-target="#acceptdel"
+                  data-id="<?=$value['id'];?>"
+                  >Delete
+                  </button>
 
                   </div>
                 </td>   
@@ -75,6 +76,23 @@
                 }
               ?>
           </table>
+
+          <!--modal delete -->
+            <div  class="modal fade" id="acceptdel" role="dialog">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content " style="width: 300px; margin-left: 50%; transform: translateX(-50%);">
+                <div class="modal-header" style="color:#fff;background-color: #af9484;padding:6px;">
+                  <h5 class="modal-title"><i class="fa fa-edit"></i>Confirm</h5>
+                </div>
+
+                <input id="del" type="hidden" name="id" value="<?php echo $value['id']; ?>">
+                
+                <em>are you sure want to delete?</em>
+                <p  style="text-align:center;float:center;"><button id="delete" type="submit" id="update_data" class="btn btn-default btn-sm" style="background-color: #af9484;color:#fff;">YES</button>
+                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal" style="background-color: #af9484;color:#fff;">Close</button></p>
+              </div>
+              </div>
+            </div>  <!--  modal delete end -->
 
           <!-- Modal Update-->
               <div  class="modal fade" id="update_country" role="dialog">
@@ -133,11 +151,12 @@
                 </div>
               </div>
             </div>
-          <!-- Modal End-->
+          <!-- Modal update End-->
 
           <script>
           $(document).ready(function() {
 
+            //ajax for edit from list
               $(function () {
                 $('#update_country').on('show.bs.modal', function (event) {
                   var button = $(event.relatedTarget); 
@@ -156,7 +175,7 @@
                   modal.find('#id_modal').val(id);
                 });
             });
-            //ajax for edit from list
+            
             $(document).on("click", "#update_data", function() { 
                 $.ajax({
                   url: "catalog/product/controller/update_save_delete_ajax.php",
@@ -176,24 +195,33 @@
                 });
               });
 
-            //ajax for delete from list
+            //ajax for delete from delete
 
-          $('#delete').on('click', function() {
-          $("#delete").attr("disabled", "disabled");
-          var id = $("#idD").val();
+            $(function () {
+                  $('#acceptdel').on('show.bs.modal', function (event) {
+                  var button = $(event.relatedTarget); 
+                  var id = button.data('id');
+                  var modal = $(this);
 
-          $.ajax({
-              url: "catalog/product/controller/update_save_delete_ajax.php",
-              type: "POST",
-              data: {
-                id: id       
-              },
-              cache: false,
-              success: function(){
-                
-              }
+                  
+                  modal.find('#del').val(id);
+               });
             });
-          });
+
+          $(document).on("click", "#delete", function() { 
+                $.ajax({
+                  url: "catalog/product/controller/update_save_delete_ajax.php",
+                  type: "POST",
+                  cache: false,
+                  data:{
+                    id: $('#del').val(),
+                    
+                  },
+                  success: function(){
+                    location.reload();
+                  }
+                });
+              });
 
 
           });
