@@ -20,9 +20,9 @@
 		    $elements = explode('/', $path);                
 		    $str_1 = array_shift($elements);                    
 		    $str_2 = array_shift($elements);                    
-		    $str_3 = array_shift($elements);                    
-		    $str_4 = array_shift($elements);                    
-		    $str_5 = array_shift($elements);                    
+		    // $str_3 = array_shift($elements);                    
+		    // $str_4 = array_shift($elements);                    
+		    // $str_5 = array_shift($elements);                    
 		                      
 		    
 		    switch (array_shift($elements)) {

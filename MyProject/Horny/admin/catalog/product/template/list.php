@@ -11,7 +11,7 @@
           <!DOCTYPE html>
             <html lang="en">
             <head>
-              <title>View Ajax</title>
+              <title>Admin</title>
               <meta charset="utf-8">
               <meta name="viewport" content="width=device-width, initial-scale=1">
               <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -24,7 +24,7 @@
             <a  href="product-add.html">
             <button style="cursor: pointer; margin-bottom: 50px; margin-top: 20px; margin-left: 50%; transform: translateX(-50%); padding: 10px 10px; background-color: purple; color: white;">ADD NEW PRODUCTS</button>
             </a>
-
+            
             <!-- show list product from database -->
             <h4>MY PRODUCTS LIST</h4>
             <table id="list" style="text-align: center;" width="100%" border="1">

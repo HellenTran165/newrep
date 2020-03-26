@@ -9,14 +9,15 @@
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		</head>
-		<body>
-			<h3>ADD NEW PRODUCTS</h3>
+		<body >
+
+			<h3 style="margin-top: 100px; margin-left: 50%; transform: translateX(-50%);">ADD NEW PRODUCTS</h3>
 			
 
-			<form id="fupform" action="" method="post" enctype="multipart/form-data">
+			<form style="margin-top: 50px; margin-left: 50%; transform: translateX(-50%);" id="fupform" action="" method="post" enctype="multipart/form-data">
 				<table width="600" border="1">
 					<tr>
-						<td width="97"> Ten Sp</td>
+						<td width="97"> Tên sản phẩm</td>
 						<td width="87">
 							<input id="name" type="text" name="ten">
 						</td>
@@ -24,7 +25,7 @@
 
 					<tr>
 						<td>
-							Loai Sp
+							Loại sản phẩm
 						</td>
 						<td>
 							<input id="type" type="text" name="loai">
@@ -33,7 +34,7 @@
 
 					<tr>
 						<td>
-							Hinh Anh
+							Hình Ảnh
 						</td>
 						<td>
 							<input id="image" type="file" name="hinhanh" />
@@ -42,7 +43,7 @@
 
 					<tr>
 						<td>
-							Gia
+							Giá
 						</td>
 						<td>
 							<input id="price" type="text" name="gia">
